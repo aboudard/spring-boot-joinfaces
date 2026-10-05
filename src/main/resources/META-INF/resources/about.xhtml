@@ -1,0 +1,12 @@
+<ui:composition template="/templates/template.xhtml"
+				xmlns="http://www.w3.org/1999/xhtml"
+				xmlns:ui="jakarta.faces.facelets"
+				xmlns:h="jakarta.faces.html">
+
+	<ui:define name="title">À Propos</ui:define>
+
+	<ui:define name="content">
+		<h1>À Propos de ce projet</h1>
+		<p>Version du projet : <strong><h:outputText value="#{aboutBean.version}" /></strong></p>
+	</ui:define>
+</ui:composition>

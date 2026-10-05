@@ -1,0 +1,39 @@
+<ui:composition template="/templates/template.xhtml"
+				xmlns="http://www.w3.org/1999/xhtml"
+				xmlns:h="jakarta.faces.html"
+				xmlns:ui="jakarta.faces.facelets">
+
+	<ui:define name="title">Ajouter un produit</ui:define>
+
+	<ui:define name="content">
+		<h1>Ajouter un nouveau produit</h1>
+
+		<!-- En Jakarta Faces, tout formulaire doit être enveloppé dans une balise h:form -->
+		<h:form id="addProductForm" style="max-width: 400px; display: flex; flex-direction: column; gap: 15px;">
+
+			<div>
+				<h:outputLabel for="name" value="Nom du produit : " style="display:block; font-weight:bold;" />
+				<h:inputText id="name" value="#{productBean.newProductName}" required="true" requiredMessage="Le nom est obligatoire" style="width:100%; padding:5px;" />
+			</div>
+
+			<div>
+				<h:outputLabel for="price" value="Prix (€) : " style="display:block; font-weight:bold;" />
+				<h:inputText id="price" value="#{productBean.newProductPrice}" required="true" requiredMessage="Le prix est obligatoire" style="width:100%; padding:5px;" />
+			</div>
+
+			<div style="display: flex; gap: 10px; margin-top: 10px;">
+				<!-- Bouton de soumission qui appelle la méthode de sauvegarde -->
+				<h:commandButton value="Enregistrer" action="#{productBean.saveProduct}" style="padding: 8px 15px; background-color: #2ecc71; color: white; border: none; font-weight: bold; cursor: pointer;" />
+
+				<!-- Bouton d'annulation pour retourner à la liste -->
+				<a href="/products.xhtml" style="display: inline-block; padding: 8px 15px; background-color: #e74c3c; color: white; border: none; font-weight: bold; text-decoration: none; text-align: center; cursor: pointer;">
+					Annuler
+				</a>
+			</div>
+
+			<!-- Zone d'affichage des messages d'erreur si la validation échoue -->
+			<h:messages style="color:red;" />
+		</h:form>
+	</ui:define>
+
+</ui:composition>

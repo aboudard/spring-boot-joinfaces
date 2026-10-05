@@ -1,0 +1,12 @@
+<ui:composition template="/templates/template.xhtml"
+				xmlns="http://www.w3.org/1999/xhtml"
+				xmlns:h="jakarta.faces.html"
+				xmlns:ui="jakarta.faces.facelets">
+
+	<ui:define name="title">Accueil - JoinFaces</ui:define>
+
+	<ui:define name="content">
+		<h1>Bienvenue sur la page d'accueil !</h1>
+		<p>Message du Bean : <strong><h:outputText value="#{helloBean.message}" /></strong></p>
+	</ui:define>
+</ui:composition>

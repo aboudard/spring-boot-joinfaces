@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns="http://w3.org"
+	  xmlns:h="jakarta.faces.html"
+	  xmlns:ui="jakarta.faces.facelets">
+<h:head>
+	<title><ui:insert name="title">Mon Application</ui:insert></title>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			margin: 0;
+			padding: 0;
+		}
+
+		.topbar {
+			background-color: #2c3e50;
+			padding: 15px;
+			display: flex;
+			gap: 15px;
+		}
+
+		.topbar a {
+			color: white;
+			text-decoration: none;
+			font-weight: bold;
+			padding: 5px 10px;
+			border-radius: 4px;
+		}
+
+		.topbar a:hover {
+			background-color: #34495e;
+		}
+
+		.content {
+			padding: 20px;
+		}
+	</style>
+</h:head>
+<h:body>
+
+	<!-- Barre de navigation commune -->
+	<div class="topbar">
+		<h:link value="Accueil" outcome="index" />
+		<h:link value="Produits" outcome="products" />
+		<h:link value="À Propos" outcome="about" />
+	</div>
+
+	<!-- Zone dynamique qui sera remplacée par le contenu de chaque page -->
+	<div class="content">
+		<ui:insert name="content">Contenu par défaut</ui:insert>
+	</div>
+
+</h:body>
+</html>
